@@ -7,6 +7,7 @@ class BookShelfChanger extends React.Component {
     changeShelf: PropTypes.func.isRequired
   };
 
+  // Lets react know what the current shelf of a book is
   state = {
     currentShelf: this.props.book.shelf
   };
@@ -20,7 +21,7 @@ class BookShelfChanger extends React.Component {
 
   render() {
     return (
-      
+
     )
   }
 }
