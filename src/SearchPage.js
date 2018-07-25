@@ -13,13 +13,14 @@ class Search extends React.Component {
     this.props.updateSearch(search.trim());
   };
 
+  // Clears search bar before component is removed from DOM 
   componentWillUnmount() {
     this.props.updateSearch('');
   }
 
   render() {
     return (
-      
+
     )
   }
 }
