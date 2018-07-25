@@ -2,22 +2,11 @@
 
 ## Table of Contents
 
-<<<<<<< HEAD
 * [Background](#background)
 * [Instructions](#instructions)
 * [How-To-Use](#how-to-use)
 * [Important](#important)
 * [Contributing](#contributing)
-||||||| merged common ancestors
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
-=======
-* [Background](#background)
-* [Instructions](#instructions)
-* [How-To-Use](#how-to-use)
-* [Important](#important)
-* [Create React App](#create react app)
-* [Contributing](#contributing)
->>>>>>> f7312ce96f39e7cc18ab95fbbaec087e0997eba5
 
 ## Background
 
@@ -47,7 +36,7 @@ React was one of the first frameworks that I learned about from Udacity, and thi
 
 * Press the 'plus' button on the bottom right to search for books that you would like to add to your shelves
 
-* Click on any book that you have searched, and choose which shelve you would like to add that book to
+* Click on any book that you have searched, and choose which shelf you would like to add that book to
 
 * If you would like to change a book's shelf or remove a book, click on a book in your shelves
 
