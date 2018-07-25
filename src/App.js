@@ -11,6 +11,7 @@ class BooksApp extends React.Component {
     searchBooks: []
   };
 
+  // Fetches every book provided by the API
   componentDidMount() {
     this.getAllBooks();
   }
@@ -21,21 +22,27 @@ class BooksApp extends React.Component {
     });
   }
 
+  // Returns books filtered by their respective shelves
   getShelfBooks(shelfName) {
     return this.state.books.filter((b) => b.shelf === shelfName)
   }
 
+  // Moves a book to a different shelf
   changeShelf = (book, newShelf) => {
     BooksAPI.update(book, newShelf).then(() => {
+      // Updates book
       book.shelf = newShelf;
 
+      // Appends book to the end of the new shelf
       this.setState(state => ({
         books: state.books.filter(b => b.id !== book.id).concat([ book ])
       }));
     });
   };
 
+  // Updates the list of books shown on the search page based on input
   updateSearch = (search) => {
+    // Successful search
     if (search) {
       BooksAPI.search(search).then((books) => {
         if (books.length) {
@@ -44,6 +51,7 @@ class BooksApp extends React.Component {
           });
         }
       });
+    // Failed or empty search
     } else {
       this.setState({
         searchBooks: []
