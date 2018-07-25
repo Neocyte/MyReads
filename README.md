@@ -2,22 +2,11 @@
 
 ## Table of Contents
 
-<<<<<<< HEAD
 * [Background](#background)
 * [Instructions](#instructions)
 * [How-To-Use](#how-to-use)
 * [Important](#important)
 * [Contributing](#contributing)
-||||||| merged common ancestors
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
-=======
-* [Background](#background)
-* [Instructions](#instructions)
-* [How-To-Use](#how-to-use)
-* [Important](#important)
-* [Create React App](#create react app)
-* [Contributing](#contributing)
->>>>>>> f7312ce96f39e7cc18ab95fbbaec087e0997eba5
 
 ## Background
 
