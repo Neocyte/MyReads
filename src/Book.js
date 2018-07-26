@@ -20,7 +20,9 @@ class Book extends React.Component {
           />
         </div>
         <div className="book-title">{book.name}</div>
-        <div className="book-authors">{book.authors}</div>
+        <div className="book-authors">
+          {(book.authors) ? book.authors.join(', ' ) : ''}
+        </div>
       </div>
     )
   }
