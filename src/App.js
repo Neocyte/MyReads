@@ -46,6 +46,12 @@ class BooksApp extends React.Component {
     if (search) {
       BooksAPI.search(search).then((books) => {
         if (books.length) {
+          books.forEach((book, index) => {
+            let myBook = this.state.books.find((b) => b.id === book.id);
+            book.shelf = myBook ? myBook.shelf : 'none';
+            books[index] = book;
+          });
+
           this.setState({
             searchBooks: books
           });
