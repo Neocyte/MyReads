@@ -68,6 +68,23 @@ class BooksApp extends React.Component {
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
+              <div>
+                <BookShelf
+                  title="Currently Reading"
+                  books={this.getShelfBooks("currentlyReading")}
+                  changeShelf={this.changeShelf}
+                />
+                <BookShelf
+                  title="Want to Read"
+                  books={this.getShelfBooks("wantToRead")}
+                  changeShelf={this.changeShelf}
+                />
+                <BookShelf
+                  title="Read"
+                  books={this.getShelfBooks("read")}
+                  changeShelf={this.changeShelf}
+                />
+              </div>
             </div>
             <div className="open-search">
               <Link to="/search">Add a book</Link>
@@ -75,7 +92,12 @@ class BooksApp extends React.Component {
           </div>
         )}/>
 
-        <Route path="/search" render={(history) => (
+        <Route path="/search" render={{( history }) => (
+          <SearchPage
+            books={this.state.searchBooks}
+            updateQuery={this.updateQuery}
+            changeShelf={this.changeShelf}
+          />
         )}/>
       </div>
     )
