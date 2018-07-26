@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import * as BooksAPI from './BooksAPI';
 import Book from './Book';
 
 class SearchPage extends React.Component {
@@ -10,12 +11,26 @@ class SearchPage extends React.Component {
   };
 
   updateSearch = (search) => {
-    this.props.updateSearch(search.trim());
+    // Successful search
+    if (search) {
+      BooksAPI.search(search).then((books) => {
+        if (books.length) {
+          this.setState({
+            searchBooks: books
+          });
+        }
+      });
+    // Failed or empty search
+    } else {
+      this.setState({
+        searchBooks: []
+      });
+    }
   };
 
   // Clears search bar before component is removed from DOM
   componentWillUnmount() {
-    this.props.updateSearch('');
+    this.updateSearch('');
   }
 
   render() {
