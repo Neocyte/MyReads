@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class BookShelfChanger extends React.Component {
-  propTypes = {
+  static propTypes = {
     book: PropTypes.object.isRequired,
     changeShelf: PropTypes.func.isRequired
   };
