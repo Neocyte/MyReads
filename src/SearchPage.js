@@ -1,36 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import * as BooksAPI from './BooksAPI';
 import Book from './Book';
 
 class SearchPage extends React.Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
-    changeShelf: PropTypes.func.isRequired
+    changeShelf: PropTypes.func.isRequired,
   };
 
   updateSearch = (search) => {
-    // Successful search
-    if (search) {
-      BooksAPI.search(search).then((books) => {
-        if (books.length) {
-          this.setState({
-            searchBooks: books
-          });
-        }
-      });
-    // Failed or empty search
-    } else {
-      this.setState({
-        searchBooks: []
-      });
-    }
+    this.props.updateSearch(search.trim());
   };
 
   // Clears search bar before component is removed from DOM
   componentWillUnmount() {
-    this.updateSearch('');
+    this.props.updateSearch('');
   }
 
   render() {
@@ -49,7 +34,7 @@ class SearchPage extends React.Component {
         <div className="search-books-results">
           <ol className="books-grid">
             {this.props.books.map((book) => (
-              <li key={book.id} className="contact-list-item">
+              <li key={book.id} className="book">
                 <Book
                   book={book}
                   changeShelf={this.props.changeShelf}
