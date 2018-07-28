@@ -42,9 +42,9 @@ class BooksApp extends React.Component {
 
   // Updates the list of books shown on the search page based on input
   updateSearch = (search) => {
-    // Successful search
     if (search) {
       BooksAPI.search(search).then((books) => {
+        // Successfull Search
         if (books.length) {
           books.forEach((book, index) => {
             let myBook = this.state.books.find((b) => b.id === book.id);
@@ -55,9 +55,14 @@ class BooksApp extends React.Component {
           this.setState({
             searchBooks: books
           });
+        // Failed Search
+        } else {
+          this.setState({
+            searchBooks: []
+          });
         }
       });
-    // Failed or empty search
+    // Empty Search
     } else {
       this.setState({
         searchBooks: []
