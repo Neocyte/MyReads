@@ -108,6 +108,11 @@ body, .app {
   background-repeat: no-repeat;
   background-size: 28px;
   font-size: 0;
+  z-index: 1;
+}
+
+.close-search:hover {
+  box-shadow: 0 0 7.5px green;
 }
 
 .search-books-results {
